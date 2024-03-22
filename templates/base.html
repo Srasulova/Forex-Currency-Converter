@@ -7,18 +7,43 @@
   </head>
   <body>
     <section>
-      <form action="">
+      <form action="/" method="POST">
+        <!-- Updated the method to POST -->
         <label for="converting-from">Converting from</label>
-        <input type="text" id="converting-from" name="from" />
+        <input type="text" id="converting-from" name="from" required />
+        <!-- Added required attribute for form validation -->
 
         <label for="converting-to">Converting to</label>
-        <input type="text" id="converting-to" name="to" />
+        <input type="text" id="converting-to" name="to" required />
+        <!-- Added required attribute for form validation -->
 
         <label for="amount">Amount</label>
-        <input type="text" id="amount" name="amount" />
+        <input type="text" id="amount" name="amount" required />
+        <!-- Added required attribute for form validation -->
 
-        <button>Sumbit</button>
+        <button type="submit">Convert</button>
+        <!-- Updated button type to submit -->
       </form>
     </section>
+
+    <div>
+      {% if conversion_rate and conversion_result %}
+      <p>Conversion rate: {{ conversion_rate }}</p>
+      <p>Converted amount: {{ conversion_result }}</p>
+      {% elif error_message %}
+      <p>{{ error_message }}</p>
+      {% endif %}
+    </div>
   </body>
 </html>
+
+<!-- Display converted amount or error message -->
+<!-- {% if converted_amount %}
+    <div>
+      <p>Converted Amount: {{ converted_amount }}</p>
+    </div>
+    {% elif error_message %}
+    <div>
+      <p>Error: {{ error_message }}</p>
+    </div>
+    {% endif %} -->
