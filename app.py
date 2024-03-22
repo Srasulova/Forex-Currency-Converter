@@ -16,13 +16,6 @@ base_url = 'https://v6.exchangerate-api.com/v6/b1a53257e5596240e73d3b7f/pair/'
 def show_home_page():
     return render_template("base.html")
 
-# @app.route("/", methods = ["POST"])
-# def home_page():
-#     from_currency = request.form['from']
-#     to_currency = request.form['to']
-#     amount = request.form['amount']
-#     return render_template("base.html", from_currency = from_currency, to_currency = to_currency, amount = amount )
-
 @app.route("/", methods=["GET", "POST"])
 def home_page():
     if request.method == "POST":

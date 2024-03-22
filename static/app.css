@@ -1,0 +1,32 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+input,
+label,
+button {
+  margin: 5px;
+}
+
+button {
+  width: 30%;
+  align-self: center;
+  margin: 20px;
+  padding: 5px 10px;
+  background-color: royalblue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+input {
+  border: 2px solid royalblue;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+label {
+  font-size: medium;
+}
